@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GlobalExceptionHandler.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">calculator-service</a> &gt; <a href="index.source.html" class="el_package">com.project.calculator.exception</a> &gt; <span class="el_source">GlobalExceptionHandler.java</span></div><h1>GlobalExceptionHandler.java</h1><pre class="source lang-java linenums">package com.project.calculator.exception;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.ConstraintViolationException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import java.time.Instant;
+import java.util.List;
+
+@RestControllerAdvice
+<span class="fc" id="L17">public class GlobalExceptionHandler {</span>
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity&lt;ApiErrorResponse&gt; handleValidation(MethodArgumentNotValidException exception,
+                                                             HttpServletRequest request) {
+<span class="fc" id="L22">        List&lt;String&gt; details = exception.getBindingResult().getFieldErrors().stream()</span>
+<span class="fc" id="L23">                .map(this::formatFieldError)</span>
+<span class="fc" id="L24">                .toList();</span>
+
+<span class="fc" id="L26">        return buildError(HttpStatus.BAD_REQUEST, &quot;Request body is invalid&quot;, request.getRequestURI(), details);</span>
+    }
+
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity&lt;ApiErrorResponse&gt; handleUnreadableBody(HttpMessageNotReadableException exception,
+                                                                 HttpServletRequest request) {
+<span class="fc" id="L32">        return buildError(HttpStatus.BAD_REQUEST, &quot;Request body is malformed&quot;, request.getRequestURI(), List.of());</span>
+    }
+
+    @ExceptionHandler(ConstraintViolationException.class)
+    public ResponseEntity&lt;ApiErrorResponse&gt; handleConstraintViolation(ConstraintViolationException exception,
+                                                                      HttpServletRequest request) {
+<span class="fc" id="L38">        List&lt;String&gt; details = exception.getConstraintViolations().stream()</span>
+<span class="pc" id="L39">                .map(violation -&gt; violation.getPropertyPath() + &quot;: &quot; + violation.getMessage())</span>
+<span class="fc" id="L40">                .toList();</span>
+
+<span class="fc" id="L42">        return buildError(HttpStatus.BAD_REQUEST, &quot;Request is invalid&quot;, request.getRequestURI(), details);</span>
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity&lt;ApiErrorResponse&gt; handleUnexpected(Exception exception, HttpServletRequest request) {
+<span class="fc" id="L47">        return buildError(HttpStatus.INTERNAL_SERVER_ERROR, &quot;Unexpected internal error&quot;, request.getRequestURI(), List.of());</span>
+    }
+
+    private String formatFieldError(FieldError error) {
+<span class="fc" id="L51">        return error.getField() + &quot;: &quot; + error.getDefaultMessage();</span>
+    }
+
+    private ResponseEntity&lt;ApiErrorResponse&gt; buildError(HttpStatus status,
+                                                        String message,
+                                                        String path,
+                                                        List&lt;String&gt; details) {
+<span class="fc" id="L58">        ApiErrorResponse body = new ApiErrorResponse(</span>
+<span class="fc" id="L59">                Instant.now(),</span>
+<span class="fc" id="L60">                status.value(),</span>
+<span class="fc" id="L61">                status.getReasonPhrase(),</span>
+                message,
+                path,
+                details);
+<span class="fc" id="L65">        return ResponseEntity.status(status).body(body);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

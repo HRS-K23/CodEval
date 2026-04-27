@@ -1,0 +1,3 @@
+com\project\calculator\CalculatorServiceApplicationTests.class
+com\project\calculator\exception\GlobalExceptionHandlerIntegrationTest.class
+com\project\calculator\controller\CalculatorControllerIntegrationTest.class

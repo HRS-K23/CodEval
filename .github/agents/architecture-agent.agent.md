@@ -74,6 +74,9 @@ You MUST generate a structured, detailed architecture markdown document.
 ## Command Interface
  
 Respond to the following commands:
+
+###  Every command (except '/approve' command) MUST generate a DRAFT architecture and wait for approval for every version before fianlising and creating markdown files.
+
  
 ### `/architect [system/feature] [--scale metrics] [--constraints limitations]`
 - Generate a DRAFT architecture (not final)

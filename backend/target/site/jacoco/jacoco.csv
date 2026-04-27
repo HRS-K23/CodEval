@@ -1,0 +1,8 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+calculator-service,com.project.calculator,CalculatorServiceApplication,5,3,0,0,2,1,1,1,1,1
+calculator-service,com.project.calculator.exception,GlobalExceptionHandler,7,74,0,0,0,17,1,7,1,7
+calculator-service,com.project.calculator.exception,ApiErrorResponse,0,21,0,0,0,1,0,1,0,1
+calculator-service,com.project.calculator.dto,CalculationResponse,0,15,0,0,0,1,0,1,0,1
+calculator-service,com.project.calculator.dto,CalculationRequest,0,9,0,0,0,1,0,1,0,1
+calculator-service,com.project.calculator.controller,CalculatorController,0,18,0,0,0,5,0,3,0,3
+calculator-service,com.project.calculator.service.impl,CalculatorServiceImpl,0,35,0,0,0,5,0,3,0,3

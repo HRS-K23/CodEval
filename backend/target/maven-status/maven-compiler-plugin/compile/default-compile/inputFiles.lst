@@ -1,0 +1,8 @@
+C:\EPAM\codeval-orchestrator\backend\src\main\java\com\project\calculator\CalculatorServiceApplication.java
+C:\EPAM\codeval-orchestrator\backend\src\main\java\com\project\calculator\controller\CalculatorController.java
+C:\EPAM\codeval-orchestrator\backend\src\main\java\com\project\calculator\dto\CalculationRequest.java
+C:\EPAM\codeval-orchestrator\backend\src\main\java\com\project\calculator\dto\CalculationResponse.java
+C:\EPAM\codeval-orchestrator\backend\src\main\java\com\project\calculator\exception\ApiErrorResponse.java
+C:\EPAM\codeval-orchestrator\backend\src\main\java\com\project\calculator\exception\GlobalExceptionHandler.java
+C:\EPAM\codeval-orchestrator\backend\src\main\java\com\project\calculator\service\CalculatorService.java
+C:\EPAM\codeval-orchestrator\backend\src\main\java\com\project\calculator\service\impl\CalculatorServiceImpl.java
