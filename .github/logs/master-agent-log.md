@@ -230,3 +230,38 @@
 ### 2026-04-27T12:43:10Z | ARTIFACT_CREATED
 **File:** `tickets/EPMICMPCOD-258/architecture/architecture-decision.md`
 **Status:** COMPLETE
+
+### 2026-04-27T12:44:00Z | ARTIFACT_UPDATED
+**Action:** COMMIT — architecture stage
+**SHA:** f232ca3
+**Message:** docs: add architecture decision for DSA generator -- EPMICMPCOD-258
+**Status:** COMPLETE
+
+### 2026-04-27T12:45:00Z | PIPELINE_PAUSED
+**Stage:** 2 — Backend Implementation (not yet started)
+**Status:** AWAITING_HUMAN
+**Note:** Human requested pause before Stage 2 execution.
+
+### 2026-04-27T12:50:00Z | PIPELINE_RESUMED
+**Stage:** 2 — Backend Implementation
+**Status:** STARTED
+
+### 2026-04-27T12:52:00Z | ARTIFACT_CREATED
+**File:** `tickets/EPMICMPCOD-258/implementation/files-changed.md`
+**Status:** COMPLETE
+
+### 2026-04-27T12:52:05Z | ARTIFACT_CREATED
+**File:** `tickets/EPMICMPCOD-258/implementation/implementation-notes.md`
+**Status:** COMPLETE
+
+### 2026-04-27T12:52:10Z | ARTIFACT_CREATED
+**Files:** 20 source files generated (pom.xml + 19 Java/resource files)
+**Status:** COMPLETE
+
+### 2026-04-27T12:52:15Z | CHECKPOINT_REACHED
+**Checkpoint:** B — Backend Implementation
+**Status:** AWAITING_HUMAN
+
+### 2026-04-27T12:55:00Z | HUMAN_APPROVED
+**Checkpoint:** B — Backend Implementation
+**Status:** COMPLETE

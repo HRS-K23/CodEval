@@ -15,3 +15,4 @@
 ## Commits
 | # | Stage | Type | Message | SHA | Pushed |
 |---|-------|------|---------|-----|--------|
+| 1 | architecture | docs | docs: add architecture decision for DSA generator -- EPMICMPCOD-258 | f232ca3 | false |

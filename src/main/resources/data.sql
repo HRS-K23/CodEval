@@ -1,0 +1,16 @@
+INSERT INTO problem_template (title, difficulty, category, template_body, constraints, expected_complexity) VALUES
+('Find Maximum Subarray Sum', 'MEDIUM', 'ARRAYS', 'Given an array of {n} integers, find the contiguous subarray with the largest sum.', '1 ≤ n ≤ 10^5, -10^4 ≤ arr[i] ≤ 10^4', 'O(n)'),
+('Two Sum', 'EASY', 'ARRAYS', 'Given an array of {n} integers and a target value, return indices of two numbers that add up to target.', '2 ≤ n ≤ 10^4, 0 ≤ arr[i] ≤ {max}', 'O(n)'),
+('Binary Tree Level Order Traversal', 'MEDIUM', 'TREES', 'Given the root of a binary tree with up to {n} nodes, return its level-order traversal as a list of lists.', '0 ≤ n ≤ 2000, -{max} ≤ node.val ≤ {max}', 'O(n)'),
+('Validate Binary Search Tree', 'MEDIUM', 'TREES', 'Given a binary tree with {n} nodes, determine if it is a valid BST.', '1 ≤ n ≤ 10^4', 'O(n)'),
+('Number of Islands', 'MEDIUM', 'GRAPHS', 'Given an m×n binary grid where 1 is land and 0 is water, count the number of islands.', '1 ≤ m, n ≤ 300', 'O(m*n)'),
+('Course Schedule', 'MEDIUM', 'GRAPHS', 'There are {n} courses. Given prerequisites as directed edges, determine if it is possible to finish all courses.', '1 ≤ n ≤ 2000', 'O(V+E)'),
+('Climbing Stairs', 'EASY', 'DP', 'You are climbing a staircase with {n} steps. Each time you can climb 1 or 2 steps. How many distinct ways can you reach the top?', '1 ≤ n ≤ 45', 'O(n)'),
+('Longest Common Subsequence', 'MEDIUM', 'DP', 'Given two strings of length {n}, find the length of their longest common subsequence.', '1 ≤ n ≤ 1000', 'O(m*n)'),
+('Coin Change', 'MEDIUM', 'DP', 'Given coins of different denominations and amount {n}, find the fewest coins needed to make up that amount.', '1 ≤ coins.length ≤ 12, 0 ≤ amount ≤ 10^4', 'O(amount * coins.length)'),
+('Longest Substring Without Repeating Characters', 'MEDIUM', 'STRINGS', 'Given a string of length {n}, find the length of the longest substring without repeating characters.', '0 ≤ n ≤ 5*10^4', 'O(n)'),
+('Valid Anagram', 'EASY', 'STRINGS', 'Given two strings s and t, return true if t is an anagram of s.', '1 ≤ s.length, t.length ≤ 5*10^4', 'O(n)'),
+('Merge Sort Implementation', 'MEDIUM', 'SORTING', 'Implement merge sort on an array of {n} integers and return the sorted array.', '1 ≤ n ≤ 10^5', 'O(n log n)'),
+('Kth Largest Element', 'MEDIUM', 'SORTING', 'Given an array of {n} integers, find the kth largest element.', '1 ≤ k ≤ n ≤ 10^4', 'O(n log k)'),
+('Maximum Depth of Binary Tree', 'EASY', 'TREES', 'Given a binary tree with up to {n} nodes, find its maximum depth.', '0 ≤ n ≤ 10^4', 'O(n)'),
+('Merge Intervals', 'MEDIUM', 'ARRAYS', 'Given an array of {n} intervals, merge all overlapping intervals.', '1 ≤ n ≤ 10^4', 'O(n log n)');
